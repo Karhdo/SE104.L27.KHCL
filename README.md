@@ -9,7 +9,7 @@
 | 4      | 19521482      | Trần Vĩ Hào            |Thành viên |[hlhkudo](https://github.com/hlhkudo)                    |19521482@gm.uit.edu.vn   |
 | 5      | 19521270      | Trương Quốc Bình       |Thành viên |                                                         |19521270@gm.uit.edu.vn   |
 
-## GIỚI THIỆU MÔN HỌC
+# GIỚI THIỆU MÔN HỌC
 * **Tên môn học:** NHẬP MÔN CÔNG NGHỆ PHẦN MỀM
 * **Mã môn học:** SE104
 * **Mã lớp:** SE104.L27.KHCL
