@@ -82,7 +82,7 @@ namespace PhanMemQLTV
             e.Graphics.DrawRectangle(new Pen(Brushes.Black), new Rectangle(12, 9, 926, 50));
             e.Graphics.DrawString("PHIẾU THU TIỀN PHẠT", new Font("Times New Roman", 14, FontStyle.Regular), Brushes.Black, new Point(376, 26));
             e.Graphics.DrawString("Mã đọc giả: " + this.txtMaDG.Text, new Font("Times New Roman", 14, FontStyle.Regular), Brushes.Black, new Point(32, 86));
-            e.Graphics.DrawString("Họ tên đọc giả: " + this.txtHotenDG.Text, new Font("Times New Roman", 14, FontStyle.Regular), Brushes.Black, new Point(533, 86));
+            e.Graphics.DrawString("Họ tên độc giả: " + this.txtHotenDG.Text, new Font("Times New Roman", 14, FontStyle.Regular), Brushes.Black, new Point(533, 86));
             e.Graphics.DrawString("Tổng nợ: " + this.txtTongno.Text, new Font("Times New Roman", 14, FontStyle.Regular), Brushes.Black, new Point(32, 124));
             e.Graphics.DrawString("Tiền thu: " + this.txtSotienthu.Text, new Font("Times New Roman", 14, FontStyle.Regular), Brushes.Black, new Point(533, 124));
             e.Graphics.DrawString("Còn lại: " + txtConlai.Text, new Font("Times New Roman", 14, FontStyle.Regular), Brushes.Black, new Point(533, 170));
@@ -97,7 +97,7 @@ namespace PhanMemQLTV
                 txtTongno.Text = "";
                 return;
             }
-            string query = "select * from tblHSPhieuMuon where MaDG = '" + txtMaDG.Text + "'";
+            string query = "set dateformat dmy; select * from tblHSPhieuMuon where MaDG = '" + txtMaDG.Text + "'";
             DataTable temp = ketnoi(query);
             if(temp.Rows.Count == 0)
             {
@@ -132,6 +132,11 @@ namespace PhanMemQLTV
                 return;
             int tienthu = Convert.ToInt32(txtSotienthu.Text);
             txtConlai.Text = (tienthu - Convert.ToInt32(txtTongno.Text)).ToString();
+        }
+
+        private void frmPhieuthutienphat_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -429,7 +429,7 @@ namespace PhanMemQLTV
                             {
                                 ktmuonchua = 0;
                                 string themdongsqlMuon;
-                                themdongsqlMuon = "insert into tblHSPhieuMuon values ('" + txtMaPhieu0.Text + "','" + cboMaDG0.Text + "','" + cboMaSach0.Text + "','" + dtmNgayMuon0.Text + "','" + dtmNgayTra0.Text + "','" + txtSLMuon0.Text + "',N'" + cboTinhTrang0.Text + "',N'" + txtGhiChu0.Text + "')";
+                                themdongsqlMuon = "set dateformat dmy; insert into tblHSPhieuMuon values ('" + txtMaPhieu0.Text + "','" + cboMaDG0.Text + "','" + cboMaSach0.Text + "','" + dtmNgayMuon0.Text + "','" + dtmNgayTra0.Text + "','" + txtSLMuon0.Text + "',N'" + cboTinhTrang0.Text + "',N'" + txtGhiChu0.Text + "')";
                                 ketnoi(themdongsqlMuon);
                                 MessageBox.Show("Cho mượn thành công.", "Thông Báo");
                                 //ktmuonchua = 0;
@@ -453,7 +453,7 @@ namespace PhanMemQLTV
                                     myConnection.Close();
                                     MessageBox.Show("Đã cập nhật SL Sách vào trong kho.", "Thông Báo");
 
-                                    string query = "select count(*) from chitietpm where month(NgayThang) = " + dtmNgayMuon0.Value.Month + " and year(NgayThang) = " + dtmNgayMuon0.Value.Year + " and MaSach = '" + cboMaSach0.Text + "'";
+                                    string query = "set dateformat dmy; select count(*) from chitietpm where month(NgayThang) = " + dtmNgayMuon0.Value.Month + " and year(NgayThang) = " + dtmNgayMuon0.Value.Year + " and MaSach = '" + cboMaSach0.Text + "'";
                                     ketnoi(query);
                                     int cnt = (int)myCommand.ExecuteScalar();
                                     if(cnt == 0)
@@ -485,13 +485,13 @@ namespace PhanMemQLTV
                                             maTuDong = maTuDong + k.ToString();
                                         }
 
-                                        query = "insert into ChiTietPM values('" + maTuDong + "', '" + cboMaSach0.Text + "', '" + dtmNgayMuon0.Value.ToString("yyyy-MM-dd") +  "', " + txtSLMuon0.Text + " )";
+                                        query = "set dateformat dmy; insert into ChiTietPM values('" + maTuDong + "', '" + cboMaSach0.Text + "', '" + dtmNgayMuon0.Value.ToString("yyyy-MM-dd") +  "', " + txtSLMuon0.Text + " )";
                                         ketnoi(query);
                                         myCommand.ExecuteNonQuery();
                                     }
                                     else
                                     {
-                                        query = "update ChiTietPM set SoLanMuon += " + txtSLMuon0.Text + " where month(NgayThang) = " + dtmNgayMuon0.Value.Month + " and year(NgayThang) = " + dtmNgayMuon0.Value.Year + " and MaSach = '" + cboMaSach0.Text + "'";
+                                        query = "set dateformat dmy; update ChiTietPM set SoLanMuon += " + txtSLMuon0.Text + " where month(NgayThang) = " + dtmNgayMuon0.Value.Month + " and year(NgayThang) = " + dtmNgayMuon0.Value.Year + " and MaSach = '" + cboMaSach0.Text + "'";
                                         ketnoi(query);
                                         //myCommand.ExecuteNonQuery();
                                     }
@@ -553,7 +553,7 @@ namespace PhanMemQLTV
             //soSanhNgay();
             if (kq == 1)
             {
-                string strCapNhatSLCon = "update tblHSPhieuMuon set NgayMuon='" + dtmNgayMuon0.Text + " ', NgayTra='" + dtmNgayTra0.Text + "' where MaPhieu='" + txtMaPhieu0.Text + "'";
+                string strCapNhatSLCon = "set dateformat dmy; update tblHSPhieuMuon set NgayMuon='" + dtmNgayMuon0.Text + " ', NgayTra='" + dtmNgayTra0.Text + "' where MaPhieu='" + txtMaPhieu0.Text + "'";
                 ketnoi(strCapNhatSLCon);
                 myCommand.ExecuteNonQuery();
                 MessageBox.Show("Gia hạn thành công.", "Thông Báo");
@@ -584,7 +584,7 @@ namespace PhanMemQLTV
             string query = "Select GiaTri from ThamSo Where TenTS='GiaTriThe'";
             ketnoi(query);
             int GiaTriThe = Convert.ToInt32(myCommand.ExecuteScalar());
-            query = "Select NgLapThe from tblDocGia Where MaDG='" + cboMaDG0.Text + "'";
+            query = "set dateformat dmy; Select NgLapThe from tblDocGia Where MaDG='" + cboMaDG0.Text + "'";
             ketnoi(query);
             DateTime ngaylap = Convert.ToDateTime(myCommand.ExecuteScalar());
 
