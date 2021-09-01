@@ -10,8 +10,11 @@
 | 5      | 19521270      | Trương Quốc Bình       |Thành viên |[noeffortnomoney](https://github.com/noeffortnomoney)    |19521270@gm.uit.edu.vn   |
 
 # GIỚI THIỆU MÔN HỌC
-* **Tên môn học:** NHẬP MÔN CÔNG NGHỆ PHẦN MỀM
+* **Tên môn học:** Nhập môn công nghệ phần mềm
 * **Mã môn học:** SE104
 * **Mã lớp:** SE104.L27.KHCL
 * **Năm học:** HK2 (2020 - 2021)
 * **Giảng viên**: Huỳnh Ngọc Tín
+
+# ĐỒ ÁN CUỐI KÌ
+* **Đề tài:** Phần mềm quản lý thư viện sách
