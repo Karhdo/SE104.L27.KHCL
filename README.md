@@ -27,4 +27,4 @@
 * **Đề tài:** Phần mềm quản lý thư viện sách
 
 <!-- Footer -->
-`Copyright © 2021 - Đỗ Trọng Khánh`
+<p align='center'>Copyright © 2021 - Đỗ Trọng Khánh</p>
